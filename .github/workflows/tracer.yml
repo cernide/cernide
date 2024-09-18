@@ -1,4 +1,4 @@
-name: Hypertuner
+name: Tracer
 
 on: [push, pull_request]
 
@@ -10,7 +10,7 @@ jobs:
         python-version: [3.8, 3.9, "3.10", "3.11", "3.12"]
     steps:
       - run: |
-          pip install -U hypertuner
+          pip install -U tracer
   tests:
     runs-on: ubuntu-latest
     strategy:
@@ -30,16 +30,14 @@ jobs:
           which python
           python -m pip install --upgrade pip
       - name: Install dependencies
-        run: pip install -r hypertuner/hypertuner/requirements/test.txt
-      - name: tracer
-        run: pip install -e tracer/tracer
+        run: pip install -r tracer/tracer/requirements/test.txt
       - name: cli
         run: pip install -e cli/cli
       - name: Install dev libraries
         run: |
-          cd hypertuner
-          export USE_LOCAL_PACKAGES="true" && pip install --upgrade --editable "hypertuner[dev]"
+          cd tracer
+          export USE_LOCAL_PACKAGES="true" && pip install --upgrade --editable "tracer[dev]"
       - name: Test with pytest
         run: |
-          cd hypertuner/hypertuner
+          cd tracer/tracer
           pytest -vv
