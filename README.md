@@ -4,13 +4,13 @@
 
 [![Docs](https://img.shields.io/badge/docs-stable-brightgreen.svg?style=flat&longCache=true)](https://polyaxon.com/docs/)
 [![Release](https://img.shields.io/badge/release-v2.1.0-brightgreen.svg?longCache=true)](https://polyaxon.com/docs/releases/2-1/)
-[![GitHub](https://img.shields.io/badge/issue_tracker-github-blue?style=flat&logo=github&longCache=true)](https://github.com/polyaxon/polyaxon/issues)
+[![GitHub](https://img.shields.io/badge/issue_tracker-github-blue?style=flat&logo=github&longCache=true)](https://github.com/cernide/cernide/issues)
 [![GitHub](https://img.shields.io/badge/roadmap-github-blue?style=flat&logo=github&longCache=true)](https://github.com/orgs/polyaxon/projects/5)
 
-[![CLI](https://github.com/polyaxon/polyaxon/actions/workflows/cli.yml/badge.svg)](https://github.com/polyaxon/polyaxon/actions/workflows/cli.yml)
-[![Core](https://github.com/polyaxon/polyaxon/actions/workflows/core.yml/badge.svg)](https://github.com/polyaxon/polyaxon/actions/workflows/core.yml)
-[![Hypertune](https://github.com/polyaxon/polyaxon/actions/workflows/hypertune.yml/badge.svg)](https://github.com/polyaxon/polyaxon/actions/workflows/hypertune.yml)
-[![Traceml](https://github.com/polyaxon/polyaxon/actions/workflows/traceml.yml/badge.svg)](https://github.com/polyaxon/polyaxon/actions/workflows/traceml.yml)
+[![CLI](https://github.com/cernide/cernide/actions/workflows/cli.yml/badge.svg)](https://github.com/cernide/cernide/actions/workflows/cli.yml)
+[![Core](https://github.com/cernide/cernide/actions/workflows/core.yml/badge.svg)](https://github.com/cernide/cernide/actions/workflows/core.yml)
+[![Hypertune](https://github.com/cernide/cernide/actions/workflows/hypertune.yml/badge.svg)](https://github.com/cernide/cernide/actions/workflows/hypertune.yml)
+[![Traceml](https://github.com/cernide/cernide/actions/workflows/traceml.yml/badge.svg)](https://github.com/cernide/cernide/actions/workflows/traceml.yml)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/90c05b6b112548c1a88b950beceacb69)](https://www.codacy.com/app/polyaxon/polyaxon?utm_source=github.com&utm_medium=referral&utm_content=polyaxon/polyaxon&utm_campaign=Badge_Grade)
 
 <a href="https://polyaxon.com"><img src="https://raw.githubusercontent.com/polyaxon/polyaxon/master/artifacts/logo/vector/primary-white-default-monochrome.svg" width="125" height="125" align="right" /></a>
