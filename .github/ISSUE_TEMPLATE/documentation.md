@@ -1,7 +1,6 @@
 ---
-name: Documentation & Setup
-about: Unclear or missing documentation or installation step
-
+name: Documentation
+about: Unclear or missing documentation
 ---
 
 ### Unclear documentation
