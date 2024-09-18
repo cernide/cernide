@@ -4,12 +4,9 @@
 [submodule "core"]
 	path = core
 	url = git@github.com:cernide/core
-[submodule "hypertune"]
-	path = hypertune
-	url = git@github.com:cernide/hypertune
-[submodule "traceml"]
-	path = traceml
-	url = git@github.com:cernide/traceml
+[submodule "hypertuner"]
+	path = hypertuner
+	url = git@github.com:cernide/hypertuner
 [submodule "operator"]
 	path = operator
 	url = git@github.com:cernide/operator
@@ -22,3 +19,6 @@
 [submodule "site"]
 	path = site
 	url = git@github.com:cernide/site
+[submodule "tracer"]
+	path = tracer
+	url = git@github.com:cernide/tracer
