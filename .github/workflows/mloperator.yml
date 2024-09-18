@@ -1,4 +1,4 @@
-name: MLOperator
+name: Operator
 
 on: [push, pull_request]
 
@@ -6,29 +6,29 @@ jobs:
   operator:
     runs-on: ubuntu-latest
     steps:
-    - name: Set up Go
-      uses: actions/setup-go@v5
-      with:
-        go-version: 1.22.0
-    - uses: actions/checkout@v4
-      with:
-        submodules: true
-    - uses: helm/kind-action@v1
-    - name: test
-      env:
-        KUBEBUILDER_CONTROLPLANE_START_TIMEOUT: 600s
-      run: |
-        OS=$(go env GOOS)
-        ARCH=$(go env GOARCH)
-        KUBEBUILDER_VERSION=4.1.0
-        # download kubebuilder and extract it to tmp
-        # curl -L https://github.com/kubernetes-sigs/kubebuilder/releases/download/v${KUBEBUILDER_VERSION}/kubebuilder_${KUBEBUILDER_VERSION}_${OS}_${ARCH}.tar.gz | tar -xz -C /tmp/
-        # sudo mv /tmp/kubebuilder_${KUBEBUILDER_VERSION}_${OS}_${ARCH} /usr/local/kubebuilder
-        curl -L -o /tmp/kubebuilder https://go.kubebuilder.io/dl/latest/${OS}/${ARCH}
-        sudo mv /tmp/kubebuilder /usr/local/kubebuilder
-        export PATH=$PATH:/usr/local/kubebuilder/bin
-        cd mloperator
-        ls -ltr
-        go version
-        go install
-        make test
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: 1.22.0
+      - uses: actions/checkout@v4
+        with:
+          submodules: true
+      - uses: helm/kind-action@v1
+      - name: test
+        env:
+          KUBEBUILDER_CONTROLPLANE_START_TIMEOUT: 600s
+        run: |
+          OS=$(go env GOOS)
+          ARCH=$(go env GOARCH)
+          KUBEBUILDER_VERSION=4.1.0
+          # download kubebuilder and extract it to tmp
+          # curl -L https://github.com/kubernetes-sigs/kubebuilder/releases/download/v${KUBEBUILDER_VERSION}/kubebuilder_${KUBEBUILDER_VERSION}_${OS}_${ARCH}.tar.gz | tar -xz -C /tmp/
+          # sudo mv /tmp/kubebuilder_${KUBEBUILDER_VERSION}_${OS}_${ARCH} /usr/local/kubebuilder
+          curl -L -o /tmp/kubebuilder https://go.kubebuilder.io/dl/latest/${OS}/${ARCH}
+          sudo mv /tmp/kubebuilder /usr/local/kubebuilder
+          export PATH=$PATH:/usr/local/kubebuilder/bin
+          cd operator
+          ls -ltr
+          go version
+          go install
+          make test
