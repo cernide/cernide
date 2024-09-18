@@ -1,4 +1,4 @@
-name: CLI
+name: Hypertuner
 
 on: [push, pull_request]
 
@@ -10,10 +10,8 @@ jobs:
         python-version: [3.8, 3.9, "3.10", "3.11", "3.12"]
     steps:
       - run: |
-          pip install -U polyaxon
-          polyaxon version
+          pip install -U hypertuner
   tests:
-    #    if: github.event.comment.body == 'test cli'
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -32,16 +30,16 @@ jobs:
           which python
           python -m pip install --upgrade pip
       - name: Install dependencies
-        run: pip install -r cli/cli/requirements/test.txt
+        run: pip install -r hypertuner/hypertuner/requirements/test.txt
       - name: traceml
         run: pip install -e traceml/traceml
-      - name: hypertuner
-        run: pip install -e hypertuner/hypertuner
+      - name: cli
+        run: pip install -e cli/cli
       - name: Install dev libraries
         run: |
-          cd cli
-          export USE_LOCAL_PACKAGES="true" && pip install --upgrade --editable "cli[dev,k8s_async,fsspec,init,sidecar]"
+          cd hypertuner
+          export USE_LOCAL_PACKAGES="true" && pip install --upgrade --editable "hypertuner[dev]"
       - name: Test with pytest
         run: |
-          cd cli/cli
+          cd hypertuner/hypertuner
           pytest -vv

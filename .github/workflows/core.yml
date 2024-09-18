@@ -39,8 +39,8 @@ jobs:
         run: pip install -e cli/cli
       - name: traceml
         run: pip install -e traceml/traceml
-      - name: hypertune
-        run: pip install -e hypertune/hypertune
+      - name: hypertuner
+        run: pip install -e hypertuner/hypertuner
       - name: Install required dependencies
         run: pip install -r core/core/requirements/requirements.txt
       - name: Install platform dependencies
