@@ -19,3 +19,6 @@
 [submodule "sdks"]
 	path = sdks
 	url = git@github.com:cernide/sdks
+[submodule "site"]
+	path = site
+	url = git@github.com:cernide/site
