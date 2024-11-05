@@ -1,0 +1,60 @@
+version: "3.8"
+
+x-defaults: &defaults
+  env_file:
+    - .docker/base.env
+    - .docker/config.env
+    - .docker/test.env
+
+services:
+  postgres:
+    image: postgres:14.5-alpine
+    environment:
+      POSTGRES_USER: "core"
+      POSTGRES_PASSWORD: "core"
+    networks:
+      - core
+
+  redis:
+    image: redis:7.0.5-alpine
+    networks:
+      - core
+
+  core:
+    <<: *defaults
+    image: cernide/core
+    build:
+      context: .
+      dockerfile: ./core/Dockerfile
+    networks:
+      - core
+    depends_on:
+      - postgres
+    volumes:
+      - ./core:/core
+    ports:
+      - "8000:8000"
+    environment:
+      POLYAXON_DB_HOST: "postgres"
+      POLYAXON_DB_NAME: "core"
+      POLYAXON_DB_USER: "core"
+      POLYAXON_DB_PASSWORD: "core"
+      POLYAXON_DB_PORT: "5432"
+    command: |
+      /bin/sh -c "
+      echo $PYTHONPATH &&
+      pip3 install --no-cache-dir -r requirements/dev.txt &&
+      pip3 install --no-cache-dir -r requirements/test.txt &&
+      pip3 install --no-cache-dir -r requirements/platform-test.txt &&
+      python core/manage.py migrate &&
+      python core/manage.py runserver 0.0.0.0:8000
+      "
+
+  operator:
+    image: cernide/operator
+    build:
+      context: ./operator
+      dockerfile: ./Dockerfile
+
+networks:
+  core:

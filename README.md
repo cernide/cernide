@@ -30,34 +30,13 @@ Polyaxon makes it faster, easier, and more efficient to develop deep learning ap
 </p>
 <br>
 
-# Install
+# Prerequisites
 
-#### TL;DR;
+Before installing Polyaxon, ensure you have the following tools installed:
 
-- Install CLI
-
-  ```bash
-  # Install Polyaxon CLI
-  $ pip install -U polyaxon
-  ```
-
-- Create a deployment
-
-  ```bash
-  # Create a namespace
-  $ kubectl create namespace polyaxon
-
-  # Add Polyaxon charts repo
-  $ helm repo add polyaxon https://charts.polyaxon.com
-
-  # Deploy Polyaxon
-  $ polyaxon admin deploy -f config.yaml
-
-  # Access API
-  $ polyaxon port-forward
-  ```
-
-Please check [polyaxon installation guide](https://polyaxon.com/docs/setup/)
+- [Docker](https://www.docker.com/): For containerization and image management.
+- [Kubectl](https://kubernetes.io/docs/tasks/tools/): The Kubernetes command-line tool for interacting with your cluster.
+- [Kind](https://kind.sigs.k8s.io/): For creating and managing local Kubernetes clusters using Docker containers.
 
 # Quick start
 

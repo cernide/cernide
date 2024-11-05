@@ -1,0 +1,52 @@
+deploymentType: minikube
+
+rbac:
+  enabled: false
+
+ingress:
+  enabled: false
+
+gateway:
+  resources:
+    requests:
+      memory: 160Mi
+      cpu: 1000m
+  service:
+    type: NodePort
+
+user:
+  username: travis
+  password: travis
+
+postgresql:
+  resources:
+    requests:
+      memory: 40Mi
+      cpu: 20m
+
+broker: redis
+
+redis:
+  enabled: true
+  master:
+    persistence: {enabled: false}
+    resources:
+      requests:
+        memory: 20Mi
+        cpu: 10m
+  slave:
+    persistence: {enabled: false}
+    resources:
+      requests:
+        memory: 20Mi
+        cpu: 10m
+
+scheduler:
+  enabled: true
+  imagePullPolicy: Always
+  resources:
+    requests:
+      memory: 80Mi
+      cpu: 30m
+
+environment: testing

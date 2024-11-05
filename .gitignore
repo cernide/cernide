@@ -6,7 +6,7 @@ __pycache__/
 .mypy_cache/
 .vscode/
 
-# temp files
+# Temporary files
 *~
 
 # C extensions
@@ -64,12 +64,12 @@ coverage.xml
 .idea/
 .DS_Store
 
-# fab files
+# Fab files
 fabsettings.py
 fabfile.py
 fab_templates/
 
-# graphviz files
+# Graphviz files
 *_graphviz.png
 *_graphviz.dot
 
@@ -82,34 +82,34 @@ target/
 # IPython Notebook
 .ipynb_checkpoints
 
-# pyenv
+# Pyenv
 .python-version
 
-# locals
+# Locals
 local.py
 
-# celery beat schedule file
+# Celery beat schedule file
 celerybeat-schedule*
 celeryev.pid
 celeryd*pid
 celeryd*log
 
-# dotenv
+# Dotenv
 .env
 
-# virtualenv
+# Virtualenv
 venv/
 ENV/
 
-# data
+# Data
 big_data/
 examples/data/
 data/
 
-# environment vars
+# Environment vars
 local.json
 
-# project
+# Project
 logs/
 /wheels/*
 setup.log
@@ -119,7 +119,7 @@ media/
 /**/static/rest_framework
 /**/static/css
 
-# npm modules and transpiled typescript files
+# Npm modules and transpiled typescript files
 client/dist/
 client/node_modules/
 client/npm-debug.log
@@ -128,7 +128,7 @@ deploy/node_modules/
 deploy/npm-debug.log
 /examples/polyaxon-logs/
 
-# don't ignore static dist
+# Don't ignore static dist
 !/polyaxon/static/dist
 lastfailed
 
@@ -154,7 +154,7 @@ bin
 !vendor/**/zz_generated.*
 client/.awcache/
 
-# ignore dev/test values
+# Ignore dev/test values
 values.*.dev.yaml
 values.*.test.yaml
 values.*.test.json
@@ -163,6 +163,9 @@ values.*.test.sh
 # Chart dependencies
 **/charts/*.tgz
 
-# polyaxon configs
+# Polyaxon configs
 .polyaxon/
 .polyaxonignore
+
+# Kind
+kind.conf
