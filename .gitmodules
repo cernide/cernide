@@ -1,24 +1,24 @@
 [submodule "cli"]
-	path = cli
-	url = git@github.com:cernide/cli
+  path = cli
+  url = https://github.com/cernide/cli
 [submodule "core"]
-	path = core
-	url = git@github.com:cernide/core
+  path = core
+  url = https://github.com/cernide/core
 [submodule "hypertuner"]
-	path = hypertuner
-	url = git@github.com:cernide/hypertuner
+  path = hypertuner
+  url = https://github.com/cernide/hypertuner
 [submodule "operator"]
-	path = operator
-	url = git@github.com:cernide/operator
+  path = operator
+  url = https://github.com/cernide/operator
 [submodule "charts"]
-	path = charts
-	url = git@github.com:cernide/charts
+  path = charts
+  url = https://github.com/cernide/charts
 [submodule "sdks"]
-	path = sdks
-	url = git@github.com:cernide/sdks
+  path = sdks
+  url = https://github.com/cernide/sdks
 [submodule "site"]
-	path = site
-	url = git@github.com:cernide/site
+  path = site
+  url = https://github.com/cernide/site
 [submodule "tracer"]
-	path = tracer
-	url = git@github.com:cernide/tracer
+  path = tracer
+  url = https://github.com/cernide/tracer
